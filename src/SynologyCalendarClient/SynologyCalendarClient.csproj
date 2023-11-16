@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <AssemblyName>SynologyCalendarClient</AssemblyName>
+        <RootNamespace>SynologyCalendarClient</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageId>HaemmerElectronics.SeppPenner.SynologyCalendarClient</PackageId>
+        <Authors>SeppPenner</Authors>
+        <Company>Hämmer Electronics</Company>
+        <Copyright>Copyright © Hämmer Electronics</Copyright>
+        <Description>SynologyCalendarClient is an to generate GeoJSON representations of circles to polygon and a fork of https://github.com/gabzim/circle-to-polygon ported to C#.</Description>
+        <PackageTags>c# geojson geo json csharp</PackageTags>
+        <PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.SynologyCalendarClient/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/SeppPenner/SynologyCalendarClient</RepositoryUrl>
+        <PackageIcon>Icon.png</PackageIcon>
+        <RepositoryType>Github</RepositoryType>
+        <PackageReleaseNotes>Version 1.0.0.0 (2023-11-12): 1.0 release.</PackageReleaseNotes>
+        <PackageLicenseFile>License.txt</PackageLicenseFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <NoWarn>NU1803</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Serilog" Version="2.12.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\Icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\License.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\Changelog.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>
