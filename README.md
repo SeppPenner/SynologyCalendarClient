@@ -3,7 +3,7 @@ SynologyCalendarClient
 
 SynologyCalendarClient is a project to handle Synology calendar API requests. However, as the Synology calendar API description is very bad, it is not yet finished.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/g97r2ruunhxqphtu?svg=true)](https://ci.appveyor.com/project/SeppPenner/SynologyCalendarClient)
+[![Build status](https://ci.appveyor.com/api/projects/status/tye2n8nx1w5qii7q?svg=true)](https://ci.appveyor.com/project/SeppPenner/synologycalendarclient)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/SynologyCalendarClient.svg)](https://github.com/SeppPenner/SynologyCalendarClient/issues)
 [![GitHub forks](https://img.shields.io/github/forks/SeppPenner/SynologyCalendarClient.svg)](https://github.com/SeppPenner/SynologyCalendarClient/network)
 [![GitHub stars](https://img.shields.io/github/stars/SeppPenner/SynologyCalendarClient.svg)](https://github.com/SeppPenner/SynologyCalendarClient/stargazers)
