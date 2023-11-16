@@ -36,3 +36,4 @@ node_modules/
 package-lock.json
 CheckLinks.txt
 AvailableApis.json
+Synology Calendar API.postman_collection.json

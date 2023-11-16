@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "30b60a01-407b-4d66-a11d-1cef0b584fb0",
+		"name": "Synology Calendar API public",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30487822"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/auth.cgi?api=SYNO.API.Auth&version=1&method=login&account=user&passwd=test",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"auth.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.API.Auth"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "login"
+						},
+						{
+							"key": "account",
+							"value": "user"
+						},
+						{
+							"key": "passwd",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/auth.cgi?api=SYNO.API.Auth&version=1&method=logout",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"auth.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.API.Auth"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "logout"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set event data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-SYNO-TOKEN",
+						"value": "{{synoToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/entry.cgi?api=SYNO.Cal.Event&version=1&method=set&cal_id=%2fgroup%3d%3dusers%2ftim--ikhee%2f&description=Wettbewerb%3a+Audi+Football+Summit+Testspiel%0a%0a+Alle+Infos+zum+Spiel%3a+https%3a%2f%2ffcbayern.com%2fde%2fspiele%2fprofis%2ffriendly%2f2023-2024%2faudi-football-summit-fc-bayern-manchester-city-26.07.2023%2fnews%0a%0a+Ergebnis%3a+1%3a2+(0%3a1)%0a%0a%0a%0a%0aAnbieter-Impressum%3a+https%3a%2f%2ffcbayern.com%2fde%2fimpressum%0a%0a%0acalfeed+l%c3%b6schen%3f+Anleitung%3a+bit.ly%2fcalfeed_loeschen&dtstart=TZID%3dEurope%2fBerlin%3a20230726T123000&dtend=TZID%3dEurope%2fBerlin%3a20230726T143000&evt_id=2797&is_all_day=false&is_repeat_evt=false&evt_location=Neues+Nationalstadion%2c+Tokio&original_cal_id=%2ftim%2fikhee%2f&summary=FC+Bayern+M%c3%bcnchen+-+Manchester+City&transp=TRANSPARENT&tzid=Europe%2fBerlin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Cal.Event"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "set"
+						},
+						{
+							"key": "cal_id",
+							"value": "%2fgroup%3d%3dusers%2ftim--ikhee%2f"
+						},
+						{
+							"key": "description",
+							"value": "Wettbewerb%3a+Audi+Football+Summit+Testspiel%0a%0a+Alle+Infos+zum+Spiel%3a+https%3a%2f%2ffcbayern.com%2fde%2fspiele%2fprofis%2ffriendly%2f2023-2024%2faudi-football-summit-fc-bayern-manchester-city-26.07.2023%2fnews%0a%0a+Ergebnis%3a+1%3a2+(0%3a1)%0a%0a%0a%0a%0aAnbieter-Impressum%3a+https%3a%2f%2ffcbayern.com%2fde%2fimpressum%0a%0a%0acalfeed+l%c3%b6schen%3f+Anleitung%3a+bit.ly%2fcalfeed_loeschen"
+						},
+						{
+							"key": "dtstart",
+							"value": "TZID%3dEurope%2fBerlin%3a20230726T123000"
+						},
+						{
+							"key": "dtend",
+							"value": "TZID%3dEurope%2fBerlin%3a20230726T143000"
+						},
+						{
+							"key": "evt_id",
+							"value": "2797"
+						},
+						{
+							"key": "is_all_day",
+							"value": "false"
+						},
+						{
+							"key": "is_repeat_evt",
+							"value": "false"
+						},
+						{
+							"key": "evt_location",
+							"value": "Neues+Nationalstadion%2c+Tokio"
+						},
+						{
+							"key": "original_cal_id",
+							"value": "%2ftim%2fikhee%2f"
+						},
+						{
+							"key": "summary",
+							"value": "FC+Bayern+M%c3%bcnchen+-+Manchester+City"
+						},
+						{
+							"key": "transp",
+							"value": "TRANSPARENT"
+						},
+						{
+							"key": "tzid",
+							"value": "Europe%2fBerlin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add event data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-SYNO-TOKEN",
+						"value": "{{synoToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/entry.cgi?api=SYNO.Cal.Event&version=1&method=create&cal_id=%2fgroup%3d%3dusers%2ftim--ikhee%2f&description=Wettbewerb%3a+Champions+League+2.+Spieltag%0a%0a+Alle+Infos+zum+Spiel%3a+https%3a%2f%2ffcbayern.com%2fde%2fspiele%2fprofis%2fchampions-league%2f2023-2024%2ffc-kopenhagen-fc-bayern-muenchen-03-10-2023%2fnews%0a%0a+Zu+den+Tickets%3a+https%3a%2f%2ftickets.fcbayern.com%2finternetverkaufanfragen%2fEventList.aspx%0a%0a%0a%0a%0aAnbieter-Impressum%3a+https%3a%2f%2ffcbayern.com%2fde%2fimpressum%0a%0a%0acalfeed+l%c3%b6schen%3f+Anleitung%3a+bit.ly%2fcalfeed_loeschen&dtstart=TZID%3dEurope%2fBerlin%3a20231003T210000&dtend=TZID%3dEurope%2fBerlin%3a20231003T230000&is_all_day=false&is_repeat_evt=false&evt_location=Parken+Stadion%2c+Kopenhagen&original_cal_id=%2fgroup%3d%3dusers%2ftim--ikhee%2f&summary=FC+Kopenhagen+-+FC+Bayern+M%c3%bcnchen&transp=TRANSPARENT&tzid=Europe%2fBerlin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Cal.Event"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "create"
+						},
+						{
+							"key": "cal_id",
+							"value": "%2fgroup%3d%3dusers%2ftim--ikhee%2f"
+						},
+						{
+							"key": "description",
+							"value": "Wettbewerb%3a+Champions+League+2.+Spieltag%0a%0a+Alle+Infos+zum+Spiel%3a+https%3a%2f%2ffcbayern.com%2fde%2fspiele%2fprofis%2fchampions-league%2f2023-2024%2ffc-kopenhagen-fc-bayern-muenchen-03-10-2023%2fnews%0a%0a+Zu+den+Tickets%3a+https%3a%2f%2ftickets.fcbayern.com%2finternetverkaufanfragen%2fEventList.aspx%0a%0a%0a%0a%0aAnbieter-Impressum%3a+https%3a%2f%2ffcbayern.com%2fde%2fimpressum%0a%0a%0acalfeed+l%c3%b6schen%3f+Anleitung%3a+bit.ly%2fcalfeed_loeschen"
+						},
+						{
+							"key": "dtstart",
+							"value": "TZID%3dEurope%2fBerlin%3a20231003T210000"
+						},
+						{
+							"key": "dtend",
+							"value": "TZID%3dEurope%2fBerlin%3a20231003T230000"
+						},
+						{
+							"key": "is_all_day",
+							"value": "false"
+						},
+						{
+							"key": "is_repeat_evt",
+							"value": "false"
+						},
+						{
+							"key": "evt_location",
+							"value": "Parken+Stadion%2c+Kopenhagen"
+						},
+						{
+							"key": "original_cal_id",
+							"value": "%2fgroup%3d%3dusers%2ftim--ikhee%2f"
+						},
+						{
+							"key": "summary",
+							"value": "FC+Kopenhagen+-+FC+Bayern+M%c3%bcnchen"
+						},
+						{
+							"key": "transp",
+							"value": "TRANSPARENT"
+						},
+						{
+							"key": "tzid",
+							"value": "Europe%2fBerlin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all calendars",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-SYNO-TOKEN",
+						"value": "{{synoToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/entry.cgi?api=SYNO.Cal.Cal&version=2&method=list&is_evt=true&is_todo=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Cal.Cal"
+						},
+						{
+							"key": "version",
+							"value": "2"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						},
+						{
+							"key": "is_evt",
+							"value": "true"
+						},
+						{
+							"key": "is_todo",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all events in time",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-SYNO-TOKEN",
+						"value": "{{synoToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/entry.cgi?api=SYNO.Cal.Event&version=1&method=list&cal_id_list=%5b%22%2fgroup%3d%3dusers%2ftim--ikhee%2f%22%5d&dtstart=20220917&dtend=20240518",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Cal.Event"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						},
+						{
+							"key": "cal_id_list",
+							"value": "%5b%22%2fgroup%3d%3dusers%2ftim--ikhee%2f%22%5d"
+						},
+						{
+							"key": "dtstart",
+							"value": "20220917"
+						},
+						{
+							"key": "dtend",
+							"value": "20240518"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with Syno token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Synology token\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.globals.set(\"synoToken\", jsonData.data.synotoken);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=user&passwd=test&format=sid&enable_syno_token=yes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"webapi",
+						"auth.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.API.Auth"
+						},
+						{
+							"key": "version",
+							"value": "3"
+						},
+						{
+							"key": "method",
+							"value": "login"
+						},
+						{
+							"key": "account",
+							"value": "user"
+						},
+						{
+							"key": "passwd",
+							"value": "test"
+						},
+						{
+							"key": "format",
+							"value": "sid"
+						},
+						{
+							"key": "enable_syno_token",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://192.168.2.2:5000",
+			"type": "string"
+		}
+	]
+}
