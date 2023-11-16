@@ -261,7 +261,7 @@ public class DeserializationTests
 
         Assert.IsNotNull(data);
         Assert.IsNotNull(data.Data);
-        Assert.AreEqual(1, data.Data.Length);
+        Assert.AreEqual(1, data.Data.Count());
         Assert.IsNotNull(data.Data[0]);
         Assert.AreEqual("#FB0055FF", data.Data[0].CalendarColor);
         Assert.AreEqual(string.Empty, data.Data[0].CalendarDescription);
