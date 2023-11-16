@@ -65,7 +65,7 @@ public static async Task Main()
 
 ## Issues
 * Creating a event still fails: https://stackoverflow.com/questions/77349742/how-to-use-the-synology-calendar-api-to-create-events-in-c
-* Tested methods: Login, Logout, Info, GetAllCalendars, GetCalendarById.
+* Tested methods: Login, Logout, GetApiInformation, GetAllCalendars, GetCalendarById, CreateEvent, GetAllEvents, SetEventData, CreateEvent.
 * Missing deserialization tests for Events and Tasks.
 * The API description is pretty bad, so I decided to use CalDav. Checkout https://github.com/SeppPenner/CalDAVNet and https://github.com/SeppPenner/CalDavSynologySyncer for examples.
 
