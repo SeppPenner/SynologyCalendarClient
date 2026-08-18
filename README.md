@@ -8,6 +8,8 @@ SynologyCalendarClient is a project to handle Synology calendar API requests. Ho
 [![GitHub forks](https://img.shields.io/github/forks/SeppPenner/SynologyCalendarClient.svg)](https://github.com/SeppPenner/SynologyCalendarClient/network)
 [![GitHub stars](https://img.shields.io/github/stars/SeppPenner/SynologyCalendarClient.svg)](https://github.com/SeppPenner/SynologyCalendarClient/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/SeppPenner/SynologyCalendarClient/master/License.txt)
+[![Nuget](https://img.shields.io/badge/SynologyCalendarClient-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.SynologyCalendarClient/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.SynologyCalendarClient.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.SynologyCalendarClient/)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/SynologyCalendarClient/badge.svg)](https://snyk.io/test/github/SeppPenner/SynologyCalendarClient)
 [![Blogger](https://img.shields.io/badge/Follow_me_on-blogger-orange)](https://franzhuber23.blogspot.de/)
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?logo=patreon&logoColor=white)](https://patreon.com/SeppPennerOpenSourceDevelopment)
@@ -15,13 +17,16 @@ SynologyCalendarClient is a project to handle Synology calendar API requests. Ho
 
 ## Available for
 * Net 8.0
-* Net 9.0
+* Net 10.0
 
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet
 
 ## Basic usage
 ```csharp
+// The type name repeats the namespace, so an alias keeps the code readable.
+using SynologyClient = SynologyCalendarClient.Client.SynologyCalendarClient;
+
 /// <summary>
 /// The main method of the program.
 /// </summary>
