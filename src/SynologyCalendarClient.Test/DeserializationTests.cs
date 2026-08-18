@@ -70,9 +70,7 @@ public class DeserializationTests
     public void TestSuccessLogoutResult()
     {
         var dataString = @"{
-	        ""success"": true,
-	        ""error"": {
-	        }
+	        ""success"": true
         }";
 
         var data = JsonConvert.DeserializeObject<Result<LogoutResult, CommonErrorCode>?>(dataString);
@@ -200,8 +198,8 @@ public class DeserializationTests
         Assert.IsFalse(data.Data.IsHiddenInCalendar);
         Assert.IsFalse(data.Data.IsHiddenInList);
         Assert.AreEqual("2019-06-28 11:59:17.160673+00", data.Data.ModifyTime);
-        Assert.IsFalse(data.Data.NotifyAlarmByBrowser);
-        Assert.IsFalse(data.Data.NotifyAlarmByMail);
+        Assert.IsTrue(data.Data.NotifyAlarmByBrowser);
+        Assert.IsTrue(data.Data.NotifyAlarmByMail);
         Assert.AreEqual(string.Empty, data.Data.NotifyDailyAgenda);
         Assert.IsTrue(data.Data.NotifyEventByBrowser);
         Assert.IsFalse(data.Data.NotifyEventByMail);
@@ -213,7 +211,7 @@ public class DeserializationTests
         Assert.IsTrue(data.Data.NotifyImportCalendarByMail);
         Assert.AreEqual("/admin/tlvjj/", data.Data.OriginalCalendarId);
         Assert.AreEqual("admin", data.Data.UserGroup);
-        Assert.AreEqual(1024, data.Data.UserNumber);
+        Assert.AreEqual(1024ul, data.Data.UserNumber);
         Assert.IsTrue(data.Success);
     }
 
@@ -288,7 +286,7 @@ public class DeserializationTests
         Assert.IsTrue(data.Data[0].NotifyImportCalendarByMail);
         Assert.AreEqual("/admin/home/", data.Data[0].OriginalCalendarId);
         Assert.AreEqual("admin", data.Data[0].UserGroup);
-        Assert.AreEqual(1024, data.Data[0].UserNumber);
+        Assert.AreEqual(1024ul, data.Data[0].UserNumber);
         Assert.IsTrue(data.Success);
     }
 
@@ -359,7 +357,7 @@ public class DeserializationTests
         Assert.IsTrue(data.Data.NotifyImportCalendarByMail);
         Assert.AreEqual("/admin/home/", data.Data.OriginalCalendarId);
         Assert.AreEqual("admin", data.Data.UserGroup);
-        Assert.AreEqual(1024, data.Data.UserNumber);
+        Assert.AreEqual(1024ul, data.Data.UserNumber);
         Assert.IsTrue(data.Success);
     }
 

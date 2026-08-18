@@ -47,7 +47,7 @@ public sealed record class CalendarResult
     /// <summary>
     /// Gets or sets the privilege.
     /// </summary>
-    [JsonProperty("privilege")]
+    [JsonProperty("cal_privilege")]
     public string Privilege { get; init; } = string.Empty;
 
     /// <summary>
@@ -58,7 +58,6 @@ public sealed record class CalendarResult
 
     /// <summary>
     /// Gets or sets the create time.
-    /// </summary>
     /// </summary>
     [JsonProperty("create_time")]
     public string CreateTime { get; init; } = string.Empty;
