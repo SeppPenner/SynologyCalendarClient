@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SynologyCalendarClient.cs" company="Hämmer Electronics">
+// <copyright file="SynologyCalendarClient.Info.cs" company="Hämmer Electronics">
 //   Copyright (c) All rights reserved.
 // </copyright>
 // <summary>
@@ -28,12 +28,12 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (string.IsNullOrWhiteSpace(query))
         {
-            throw new ArgumentException(nameof(query), "The query must not be empty.");
+            throw new ArgumentException("The query must not be empty.", nameof(query));
         }
 
         // Fill the parameters.

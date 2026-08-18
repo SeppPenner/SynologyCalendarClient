@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SynologyCalendarClient.cs" company="Hämmer Electronics">
+// <copyright file="SynologyCalendarClient.Auth.cs" company="Hämmer Electronics">
 //   Copyright (c) All rights reserved.
 // </copyright>
 // <summary>
@@ -38,19 +38,19 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (apiVersion >= 1)
         {
             if (string.IsNullOrWhiteSpace(account))
             {
-                throw new ArgumentException(nameof(account), "The account name must not be empty.");
+                throw new ArgumentException("The account name must not be empty.", nameof(account));
             }
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentException(nameof(password), "The account password must not be empty.");
+                throw new ArgumentException("The account password must not be empty.", nameof(password));
             }
         }
 
@@ -117,7 +117,7 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         // Fill the parameters.

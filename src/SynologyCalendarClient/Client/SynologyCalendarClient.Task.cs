@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SynologyCalendarClient.cs" company="Hämmer Electronics">
+// <copyright file="SynologyCalendarClient.Task.cs" company="Hämmer Electronics">
 //   Copyright (c) All rights reserved.
 // </copyright>
 // <summary>
@@ -36,22 +36,22 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (string.IsNullOrWhiteSpace(calendarId))
         {
-            throw new ArgumentException(nameof(calendarId), "The calendar identifier must not be empty.");
+            throw new ArgumentException("The calendar identifier must not be empty.", nameof(calendarId));
         }
 
         if (string.IsNullOrWhiteSpace(originalCalendarId))
         {
-            throw new ArgumentException(nameof(originalCalendarId), "The original calendar identifier must not be empty.");
+            throw new ArgumentException("The original calendar identifier must not be empty.", nameof(originalCalendarId));
         }
 
         if (string.IsNullOrWhiteSpace(summary))
         {
-            throw new ArgumentException(nameof(summary), "The summary must not be empty.");
+            throw new ArgumentException("The summary must not be empty.", nameof(summary));
         }
 
         // Fill the parameters.
@@ -107,12 +107,12 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (calendarIdList.IsEmptyOrNull())
         {
-            throw new ArgumentException(nameof(calendarIdList), "The calendar identifier list must not be empty.");
+            throw new ArgumentException("The calendar identifier list must not be empty.", nameof(calendarIdList));
         }
 
         // Fill the parameters.
@@ -160,12 +160,12 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (string.IsNullOrWhiteSpace(eventId))
         {
-            throw new ArgumentException(nameof(eventId), "The event identifier must not be empty.");
+            throw new ArgumentException("The event identifier must not be empty.", nameof(eventId));
         }
 
         // Fill the parameters.
@@ -219,22 +219,22 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (string.IsNullOrWhiteSpace(calendarId))
         {
-            throw new ArgumentException(nameof(calendarId), "The calendar identifier must not be empty.");
+            throw new ArgumentException("The calendar identifier must not be empty.", nameof(calendarId));
         }
 
         if (string.IsNullOrWhiteSpace(originalCalendarId))
         {
-            throw new ArgumentException(nameof(originalCalendarId), "The original calendar identifier must not be empty.");
+            throw new ArgumentException("The original calendar identifier must not be empty.", nameof(originalCalendarId));
         }
 
         if (string.IsNullOrWhiteSpace(summary))
         {
-            throw new ArgumentException(nameof(summary), "The summary must not be empty.");
+            throw new ArgumentException("The summary must not be empty.", nameof(summary));
         }
 
         // Fill the parameters.
@@ -283,12 +283,12 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (string.IsNullOrWhiteSpace(eventId))
         {
-            throw new ArgumentException(nameof(eventId), "The event identifier must not be empty.");
+            throw new ArgumentException("The event identifier must not be empty.", nameof(eventId));
         }
 
         // Fill the parameters.
@@ -332,12 +332,12 @@ public partial class SynologyCalendarClient
         // Some checks.
         if (apiVersion < 1)
         {
-            throw new ArgumentException(nameof(apiVersion), "The API version must be bigger than or equal to 1.");
+            throw new ArgumentException("The API version must be bigger than or equal to 1.", nameof(apiVersion));
         }
 
         if (calendarIdList.IsEmptyOrNull())
         {
-            throw new ArgumentException(nameof(calendarIdList), "The calendar identifier list must not be empty.");
+            throw new ArgumentException("The calendar identifier list must not be empty.", nameof(calendarIdList));
         }
 
         // Fill the parameters.

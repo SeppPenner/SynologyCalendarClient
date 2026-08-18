@@ -17,7 +17,7 @@ public partial class SynologyCalendarClient
     /// <summary>
     /// The HTTP client.
     /// </summary>
-    private readonly HttpClient httpClient = new();
+    private readonly HttpClient httpClient;
 
     /// <summary>
     /// Gets or sets the logger.
