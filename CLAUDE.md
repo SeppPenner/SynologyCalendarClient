@@ -54,16 +54,18 @@ dotnet build src/SynologyCalendarClient.sln -c Release
 dotnet test src/SynologyCalendarClient.sln
 ```
 
-- The library multi-targets `net6.0;net8.0`, the two other projects are single target `net8.0`.
-  The sibling repositories in `D:\Projekte\Github\CSharpUndVB` are already on `net8.0;net10.0`,
-  this one is behind. Keep the three projects in sync when a framework is added or dropped.
+- The library multi-targets `net8.0;net10.0`, the two other projects are single target `net10.0`.
+  That is the convention of the sibling repositories in `D:\Projekte\Github\CSharpUndVB`, keep the
+  three in sync when a framework is added or dropped.
 - All build properties live directly in the three `.csproj` files and are duplicated there. There is
   **no** `Directory.Build.props` in this repository.
-- `TreatWarningsAsErrors` is enabled in the integration test project only, the library and the test
-  project still build warnings through. Treat a new warning as an error anyway, a clean build
-  reports zero warnings.
+- `TreatWarningsAsErrors` is enabled in all three projects, so every warning breaks the build, NuGet
+  warnings (`NU****`) from restore included. A clean build reports zero warnings, keep it that way.
 - `NU1803` (HTTP source usage during restore) is the one warning suppressed via `NoWarn`. Fix
-  warnings instead of extending that list.
+  warnings instead of extending that list. `NuGetAudit` and `NuGetAuditMode=all` are on, so a
+  vulnerable transitive package fails the build too.
+- `GenerateDocumentationFile` is on for the library, so a malformed XML doc comment (`CS1570`) or a
+  missing one on a public member (`CS1591`) is a build error, not a hint.
 - Versions come from GitVersion.MsBuild out of the git tags, for example `1.0.2-1` for the first
   commit after tag `1.0.1`. Never edit a version property or an assembly version by hand.
 - Building the library also writes the `.nupkg` and the `.snupkg` into
@@ -71,7 +73,9 @@ dotnet test src/SynologyCalendarClient.sln
   `BuildAndPushPackage.bat` uploads, it does not build a package of its own.
 - `Delete-BIN-OBJ-Folders.bat` wipes every `bin` and `obj` below `src`. `BuildAndPushPackage.bat`
   does the same before it builds, so a stale `bin` never reaches nuget.org.
-- The tests are MSTest and need no network. Never claim a test run happened without running it.
+- The tests are MSTest, 9 of them in `src/SynologyCalendarClient.Test`, and they need no network and
+  no disk station. `dotnet test` runs them in about a second. Never claim a test run happened
+  without running it.
 
 ## Code conventions
 
@@ -134,12 +138,14 @@ Do not silently "clean up" these, they are existing behaviour:
   documented as "Represents PI"), they are inherited from the original.
 - **`SystemGlobals` is dead weight in this library.** Nothing inside the client calls
   `GetHumanReadableBytes`, it is public API for consumers. Same for large parts of `DecimalMath`.
-- **The README sample uses the alias `SynologyClient`.** That alias is declared in
-  `src/SynologyCalendarClient.IntegrationTest/GlobalUsings.cs`
-  (`global using SynologyClient = SynologyCalendarClient.Client.SynologyCalendarClient;`), it is not
-  part of the library. Consumers who copy the sample need either that alias or the real class name,
-  because the namespace `SynologyCalendarClient.Client` and the type `SynologyCalendarClient` repeat
-  the assembly name.
+- **The alias `SynologyClient`.** The namespace `SynologyCalendarClient.Client` and the type
+  `SynologyCalendarClient` repeat the assembly name, which makes the fully qualified name unreadable.
+  Both the integration test (in its `GlobalUsings.cs`) and the `README.md` sample therefore alias it
+  to `SynologyClient`. The alias is not part of the library, consumers declare it themselves.
+- **The test data comes from the API guide.** The JSON literals in `DeserializationTests.cs` are the
+  example responses of `doc/Synology_Calendar_API_Guide_enu.pdf`. When a test disagrees with the
+  model, check the guide before changing either side: the field name `cal_privilege` and the
+  `notify_alarm_by_*` flags were decided that way.
 - **AppVeyor badge without CI in the repository.** `README.md` links an AppVeyor build that is
   configured outside of this repository. There is no `.github` folder and no pipeline file here.
 - **`.gitattributes` sets `* text=auto`**, every rule of the Visual Studio template below it is
