@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.0.3.0 (2026-11-24)** : Removed support for Net8.0 as it is out of support, added support for Net11.0, updated NuGet packages.
 * **Version 1.0.2.0 (2026-08-18)** : Fixed the swapped exception arguments, the broken create calendar call and the calendar privilege field, updated the NuGet packages, moved to Net 8.0 and Net 10.0.
 * **Version 1.0.1.0 (2024-05-16)** : Removed support for Net7.0.
 * **Version 1.0.0.0 (2023-11-16)** : 1.0 release.

@@ -211,8 +211,9 @@ a separate request.
 
 The version in the `Changelog.md` has four parts (`1.0.2.0`), the tag has three (`1.0.2`).
 
-nuget.org and GitHub Packages hold 1.0.1 and 1.0.2, the tag 1.0.0 was never published under the
-current package id. On 2026-11-24 no tag had a GitHub release yet.
+nuget.org and GitHub Packages hold 1.0.1 to 1.0.3. The tag 1.0.0 of 2023 was never published under
+the current package id and stays that way. Every tag has a GitHub release, the one of 1.0.0 has no
+NuGet link. The releases were added on 2026-11-24.
 
 ## Git
 
