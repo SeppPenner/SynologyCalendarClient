@@ -54,9 +54,10 @@ dotnet build src/SynologyCalendarClient.sln -c Release
 dotnet test src/SynologyCalendarClient.sln
 ```
 
-- The library multi-targets `net8.0;net10.0`, the two other projects are single target `net10.0`.
-  That is the convention of the sibling repositories in `D:\Projekte\Github\CSharpUndVB`, keep the
-  three in sync when a framework is added or dropped.
+- The library multi-targets `net10.0;net11.0`, so building needs the .NET 11 SDK. The two other
+  projects are single target `net11.0`, the newest framework the library targets. That is the
+  convention of the sibling repositories in `D:\Projekte\Github\CSharpUndVB`, keep the three in sync
+  when a framework is added or dropped.
 - All build properties live directly in the three `.csproj` files and are duplicated there. There is
   **no** `Directory.Build.props` in this repository.
 - `TreatWarningsAsErrors` is enabled in all three projects, so every warning breaks the build, NuGet
